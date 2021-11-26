@@ -1,5 +1,8 @@
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
+
+import 'package:mega_sorte/splash.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +19,32 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: const MyHomePage(title: 'Meus números da sorte'),
+      home: AnimatedSplashScreen(
+        duration: 3000,
+        splash: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              Image(
+                image: AssetImage('assets/images/lucky_icon.png'),
+                width: 120,
+                height: 50,
+              ),
+              Text(
+                'Mega Sorte',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              )
+            ],
+          ),
+        ),
+        nextScreen: const MyHomePage(
+          title: 'Meus números da sorte',
+        ),
+        splashTransition: SplashTransition.fadeTransition,
+      ),
     );
   }
 }
