@@ -1,7 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.mega_sorte">
+    package="com.plusdevelopers.mega_sorte">
+    <uses-permission android:name="android.permission.INTERNET" />
    <application
-        android:label="mega_sorte"
+        android:label="Mega Sorte"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
